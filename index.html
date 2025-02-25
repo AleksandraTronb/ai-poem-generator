@@ -10,27 +10,31 @@
     <header>
       <h1>AI Ukrainian poem generator</h1>
     </header>
-    <main>
-      <form>
-        <input
-          type="text"
-          placeholder="Enter an Ukrainian poem"
-          autofocus
-          required
-          autocomplete="off"
-        />
-        <input type="submit" />
-      </form>
-      <div>
-        Як умру, то поховайте
-        <br />
-        Мене на могилі
-        <br />
-        Серед степу широкого
-        <br />
-        На Вкраїні милій,
-      </div>
-    </main>
+    <div class="container">
+      <main>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter an Ukrainian poem"
+            autofocus
+            required
+            autocomplete="off"
+            class="instructions"
+          />
+          <input type="submit" class="submit-button" />
+        </form>
+
+        <div class="poem">
+          Як умру, то поховайте
+          <br />
+          Мене на могилі
+          <br />
+          Серед степу широкого
+          <br />
+          На Вкраїні милій,
+        </div>
+      </main>
+    </div>
     <footer>
       This project was coded by Oleksandra Tron and is
       <a href="https://github.com/" target="_blank">open-sourced on GitHub</a>
@@ -39,6 +43,7 @@
         >hosted on Render</a
       >
     </footer>
+
     <script src="index.js"></script>
   </body>
 </html>
