@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <title>AI_Ukrainian_Poem_Generation</title>
   </head>
@@ -12,7 +13,7 @@
     </header>
     <div class="container">
       <main>
-        <form>
+        <form id="poem-form">
           <input
             type="text"
             placeholder="Enter an Ukrainian poem"
@@ -24,15 +25,7 @@
           <input type="submit" class="submit-button" />
         </form>
 
-        <div class="poem">
-          Як умру, то поховайте
-          <br />
-          Мене на могилі
-          <br />
-          Серед степу широкого
-          <br />
-          На Вкраїні милій,
-        </div>
+        <div class="poem" id="poem"></div>
       </main>
     </div>
     <footer>
