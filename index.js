@@ -1,5 +1,8 @@
 function displayPoem(responce) {
   console.log("poem generated");
+  let waitElement = document.querySelector("#wait");
+  waitElement.innerHTML = "";
+
   new Typewriter("#poem", {
     strings: responce.data.answer,
     autoStart: true,
@@ -10,7 +13,13 @@ function displayPoem(responce) {
 
 function poemGenerator(event) {
   event.preventDefault();
+
   console.log("generate a poem");
+  let poem = document.querySelector("#poem");
+  poem.innerHTML = "";
+  let waitElement = document.querySelector("#wait");
+  waitElement.innerHTML = "Poem is generating...";
+
   let apiKey = "869fb0d3774e410b801b3o2atc64d943";
   let userInstruction = document.querySelector("#user-instructions");
   console.log(userInstruction.value);
