@@ -1,8 +1,7 @@
 function displayPoem(responce) {
   console.log("poem generated");
-  let waitElement = document.querySelector("#wait");
-  waitElement.innerHTML = "";
-
+  let poem = document.querySelector("#wait");
+  poem.classList.add("hidden");
   new Typewriter("#poem", {
     strings: responce.data.answer,
     autoStart: true,
@@ -13,16 +12,12 @@ function displayPoem(responce) {
 
 function poemGenerator(event) {
   event.preventDefault();
-
-  console.log("generate a poem");
-  let poem = document.querySelector("#poem");
-  poem.innerHTML = "";
-  let waitElement = document.querySelector("#wait");
-  waitElement.innerHTML = "Poem is generating...";
-
-  let apiKey = "869fb0d3774e410b801b3o2atc64d943";
+  let poem = document.querySelector("#wait");
+  poem.classList.remove("hidden");
   let userInstruction = document.querySelector("#user-instructions");
+  let apiKey = "869fb0d3774e410b801b3o2atc64d943";
   console.log(userInstruction.value);
+
   let prompt = `Generate an Ukrainian poem about ${userInstruction.value}`;
   let context = `User instructions:You are a romantic poem expert and love to write short poems. Your mission is generate 4 lines poem in Ukrainian language and separete each line with <br />. Make sure to follow user instruction.`;
   let url = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
