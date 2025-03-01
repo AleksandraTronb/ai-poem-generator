@@ -1,7 +1,7 @@
 function displayPoem(responce) {
-  console.log("poem generated");
-  let poem = document.querySelector("#wait");
-  poem.classList.add("hidden");
+  let waitElement = document.querySelector("#wait");
+  waitElement.classList.add("hidden");
+
   new Typewriter("#poem", {
     strings: responce.data.answer,
     autoStart: true,
@@ -12,8 +12,10 @@ function displayPoem(responce) {
 
 function poemGenerator(event) {
   event.preventDefault();
-  let poem = document.querySelector("#wait");
-  poem.classList.remove("hidden");
+  let waitElement = document.querySelector("#wait");
+  let poem = document.querySelector("#poem");
+  poem.innerHTML = "";
+  waitElement.classList.remove("hidden");
   let userInstruction = document.querySelector("#user-instructions");
   let apiKey = "869fb0d3774e410b801b3o2atc64d943";
   console.log(userInstruction.value);
